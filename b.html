@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>삼각형 넓이 계산기</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .calculator {
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    .input-group {
+      margin-bottom: 10px;
+    }
+
+    input[type="number"] {
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 3px;
+      background-color: #3498db;
+      color: white;
+      cursor: pointer;
+    }
+
+    p#result {
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    function calculateArea() {
+      var base = parseFloat(document.getElementById('base').value);
+      var height = parseFloat(document.getElementById('height').value);
+      var area = (base * height) / 2;
+      document.getElementById('result').innerHTML = '삼각형의 넓이: ' + area.toFixed(2);
+    }
+  </script>
+</head>
+<body>
+  <div class="calculator">
+    <h1>삼각형 넓이 계산기</h1>
+  
+    <div class="input-group">
+      <label for="base">밑변을 입력하세요:</label>
+      <input type="number" id="base">
+    </div>
+
+    <div class="input-group">
+      <label for="height">높이를 입력하세요:</label>
+      <input type="number" id="height">
+    </div>
+    
+    <button onclick="calculateArea()">계산하기</button>
+  
+    <p id="result"></p>
+  </div>
+</body>
+</html>
